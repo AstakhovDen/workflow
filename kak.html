@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Workflow Boards - как это работает</title>
+<style>
+:root{
+  --bg:#0c1320; --panel:#111b2c; --card:#1a2740; --edge:#26375a; --line:#31507e;
+  --txt:#e7eefb; --dim:#8ba1c3; --faint:#5f7ba8;
+  --claude:#d97757; --claudeDim:#b0aea5; --green:#38d69c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  padding:24px 18px 60px;-webkit-text-size-adjust:100%}
+.wrap{max-width:680px;margin:0 auto}
+h1{font-size:22px;font-weight:700;color:var(--claude);margin:0 0 4px}
+.sub{color:var(--claudeDim);font-size:14px;margin:0 0 28px}
+h2{font-size:17px;font-weight:700;margin:34px 0 10px}
+p{margin:0 0 12px}
+.dim{color:var(--dim)}
+.card{background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:16px;margin:14px 0}
+ol{margin:0;padding-left:20px}
+ol li{margin-bottom:10px}
+ul{margin:0;padding-left:20px}
+ul li{margin-bottom:8px}
+.k{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+  padding:1px 8px;font-size:14px;white-space:nowrap}
+.new li{margin-bottom:8px}
+a{color:var(--claude)}
+figure{margin:14px 0}
+figcaption{font-size:13px;color:var(--faint);margin-top:6px}
+svg{width:100%;height:auto;display:block;background:var(--panel);
+  border:1px solid var(--edge);border-radius:10px}
+.note{border-left:3px solid var(--claude);padding-left:12px;color:var(--dim);font-size:15px;margin:14px 0}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--edge);color:var(--faint);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Workflow Boards</h1>
+<p class="sub">Как это работает - короткая инструкция</p>
+
+<h2>Что нового</h2>
+<div class="card">
+<ul class="new">
+<li>Все служебные кнопки собраны под одной - <span class="k">•••</span>. Шапка стала чище.</li>
+<li>Появилась синхронизация через твой Dropbox: список видят все твои устройства.</li>
+<li>Список сам приезжает с другого устройства, когда возвращаешься в приложение.</li>
+<li>Возврат списка из файла больше не даёт пустую доску.</li>
+<li>Название доски - в фирменных цветах.</li>
+</ul>
+</div>
+
+<h2>Кнопка «•••» - что внутри</h2>
+
+<figure>
+<svg viewBox="0 0 660 108" role="img" aria-label="Шапка доски с кнопкой три точки справа">
+  <rect x="0" y="0" width="660" height="108" fill="#0f1a2b"/>
+  <text x="20" y="34" fill="#d97757" font-family="Arial" font-size="16" font-weight="bold">Workflow Boards</text>
+  <text x="163" y="34" fill="#b0aea5" font-family="Arial" font-size="12">Astakhov Team</text>
+  <text x="258" y="34" fill="#26375a" font-family="Arial" font-size="11">v1.33</text>
+  <rect x="20" y="58" width="104" height="28" rx="6" fill="#1a2740" stroke="#31507e"/>
+  <text x="34" y="77" fill="#8ba1c3" font-family="Arial" font-size="12">Покупатели</text>
+  <rect x="132" y="58" width="98" height="28" rx="6" fill="#1a2740" stroke="#31507e"/>
+  <text x="146" y="77" fill="#8ba1c3" font-family="Arial" font-size="12">Кандидаты</text>
+  <rect x="440" y="58" width="120" height="28" rx="6" fill="#1a2740" stroke="#31507e"/>
+  <text x="452" y="77" fill="#8ba1c3" font-family="Arial" font-size="12">Свернуть пустые</text>
+  <rect x="570" y="58" width="46" height="28" rx="6" fill="#1a2740" stroke="#d97757" stroke-width="2"/>
+  <text x="584" y="78" fill="#d97757" font-family="Arial" font-size="16" font-weight="bold">•••</text>
+  <text x="500" y="102" fill="#5f7ba8" font-family="Arial" font-size="11">сюда нажимать</text>
+  <path d="M586 96 L590 88" stroke="#5f7ba8" stroke-width="1.5" fill="none"/>
+</svg>
+<figcaption>Шапка доски. Кнопка «•••» - справа, рядом с поиском.</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 660 268" role="img" aria-label="Меню под кнопкой три точки">
+  <rect x="0" y="0" width="660" height="268" fill="#111b2c"/>
+  <text x="30" y="34" fill="#e7eefb" font-family="Arial" font-size="16" font-weight="bold">Ещё</text>
+  <text x="30" y="56" fill="#8ba1c3" font-family="Arial" font-size="12">Список синхронизируется через твой Dropbox</text>
+
+  <rect x="30" y="72" width="270" height="34" rx="7" fill="#1a2740" stroke="#31507e"/>
+  <text x="46" y="94" fill="#e7eefb" font-family="Arial" font-size="13">Подключить Dropbox</text>
+  <text x="316" y="94" fill="#5f7ba8" font-family="Arial" font-size="12">один раз, дальше само</text>
+
+  <rect x="30" y="114" width="270" height="34" rx="7" fill="#1a2740" stroke="#31507e"/>
+  <text x="46" y="136" fill="#e7eefb" font-family="Arial" font-size="13">Вернуть из файла</text>
+  <text x="316" y="136" fill="#5f7ba8" font-family="Arial" font-size="12">после смены телефона</text>
+
+  <rect x="30" y="156" width="130" height="34" rx="7" fill="#1a2740" stroke="#31507e"/>
+  <text x="46" y="178" fill="#e7eefb" font-family="Arial" font-size="13">Сохранить CSV</text>
+  <rect x="170" y="156" width="130" height="34" rx="7" fill="#1a2740" stroke="#31507e"/>
+  <text x="186" y="178" fill="#e7eefb" font-family="Arial" font-size="13">Сохранить JSON</text>
+  <text x="316" y="178" fill="#5f7ba8" font-family="Arial" font-size="12">копия себе на устройство</text>
+
+  <rect x="30" y="198" width="270" height="34" rx="7" fill="#1a2740" stroke="#31507e"/>
+  <text x="46" y="220" fill="#e7eefb" font-family="Arial" font-size="13">Текст про рассылку</text>
+  <text x="316" y="220" fill="#5f7ba8" font-family="Arial" font-size="12">готовое сообщение со ссылкой</text>
+
+  <rect x="30" y="240" width="600" height="20" rx="7" fill="#0f1a2b" stroke="#31507e"/>
+  <text x="300" y="255" fill="#8ba1c3" font-family="Arial" font-size="12">Закрыть</text>
+</svg>
+<figcaption>Меню «Ещё». Кнопка «Закрыть» - широкая, внизу.</figcaption>
+</figure>
+
+<h2>Зачем подключать Dropbox</h2>
+<p>Пока Dropbox не подключён, список живёт <b>только в браузере того устройства</b>, где ты его вёл. Сменил телефон - список остался на старом.</p>
+<p>После подключения копия списка лежит в твоём Dropbox, в отдельной папке приложения. Её видят все твои устройства: правишь на телефоне - видно на компьютере.</p>
+
+<div class="note">Твой список уходит в <b>твой собственный</b> Dropbox. Никто другой его не видит - ни другие партнёры, ни Денис.</div>
+
+<h2>Как подключить - 4 шага</h2>
+<div class="card">
+<ol>
+<li>Нажми <span class="k">•••</span> → <span class="k">Подключить Dropbox</span></li>
+<li>Нажми синюю кнопку - откроется Dropbox. Войди в свой аккаунт и нажми «Разрешить»</li>
+<li>Dropbox покажет длинный код - скопируй его</li>
+<li>Вернись на доску и вставь код в поле, нажми «Готово»</li>
+</ol>
+</div>
+<p class="dim">Нет аккаунта Dropbox - его можно завести бесплатно прямо на этом шаге. Не хочешь заводить - доска работает и без него, просто список остаётся на одном устройстве. Тогда раз в неделю жми <span class="k">Сохранить JSON</span> - это твоя страховка.</p>
+
+<h2>Как это работает дальше</h2>
+<ul>
+<li>Подвинул карточку - через 3 секунды она уехала в Dropbox. Нажимать ничего не надо.</li>
+<li>Вернулся в приложение на другом устройстве - список подтянулся сам.</li>
+<li>Правил в двух местах сразу - выйдет карточка «Есть более свежая версия» с выбором. Что не выбрал, сохранится копией, ничего не пропадает.</li>
+<li>Нет интернета - работай спокойно. Список уедет, как только связь появится.</li>
+</ul>
+
+<h2>Если что-то пошло не так</h2>
+<p>Пришли скриншот в чат - разберёмся. Список при этом не трогай и ничего не удаляй: почти всё чинится копией из Dropbox.</p>
+
+<div class="foot">Astakhov Team · Workflow Boards</div>
+
+</div>
+</body>
+</html>
