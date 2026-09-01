@@ -7,3 +7,5 @@
 site_push.log
 __pycache__/
 .DS_Store
+*.bak
+*.py.bak
